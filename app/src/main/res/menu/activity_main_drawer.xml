@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_addNode"
+            android:icon="@drawable/ic_menu_add"
+            android:title="Thêm Node" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_menu_setting"
+            android:title="Cài đặt" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Chia sẻ" />
+            <item
+                android:id="@+id/nav_Feedback"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Trợ giúp và phản hồi" />
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_menu_favorite"
+                android:title="Đánh gía" />
+
+            <item
+                android:id="@+id/nav_introduce"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Giới thiệu về sản phẩm" />
+        </menu>
+    </item>
+
+</menu>
