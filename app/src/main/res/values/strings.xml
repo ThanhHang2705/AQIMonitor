@@ -12,6 +12,7 @@
     <string name="country_prompt">Choose a country</string>
 
     <string-array name="country_arrays">
+        <item></item>
         <item>Cầu giấy</item>
         <item>Ba Đình</item>
         <item>Hai Bà Trưng</item>

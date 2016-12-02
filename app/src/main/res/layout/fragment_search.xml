@@ -20,8 +20,10 @@
         android:background="#000"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+
         />
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -34,16 +36,23 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:layout_weight="2"/>
-        <Spinner
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="3"
-            android:layout_height="match_parent"
-            android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt" />
+            android:background="@drawable/selector_frame"
+            android:layout_height="match_parent">
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/country_arrays"
+                android:prompt="@string/country_prompt"
+                />
 
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -56,12 +65,19 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:layout_weight="2"/>
-        <Spinner
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="3"
-            android:layout_height="match_parent"
-            android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt" />
+            android:background="@drawable/selector_frame"
+            android:layout_height="match_parent">
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/country_arrays"
+                android:prompt="@string/country_prompt"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
@@ -77,15 +93,22 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:layout_weight="2"/>
-        <Spinner
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="3"
-            android:layout_height="match_parent"
-            android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt" />
+            android:background="@drawable/selector_frame"
+            android:layout_height="match_parent">
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/country_arrays"
+                android:prompt="@string/country_prompt"
+                />
 
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -98,15 +121,19 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:layout_weight="2"/>
-        <Spinner
+
+
+        <SeekBar
+            android:background="@drawable/selector_frame"
             android:layout_width="0dp"
-            android:layout_weight="3"
             android:layout_height="match_parent"
-            android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt" />
+            android:layout_weight="3"
+            android:max="30"
+            android:id="@+id/seekBar" />
 
     </LinearLayout>
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -122,15 +149,16 @@
             android:layout_weight="2"
             android:id="@+id/textView2" />
 
-        <Spinner
+        <SeekBar
             android:layout_width="0dp"
             android:layout_weight="3"
+            android:background="@drawable/selector_frame"
             android:layout_height="match_parent"
-            android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt" />
+            android:max="30" />
 
     </LinearLayout>
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -143,12 +171,19 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:layout_weight="2"/>
-        <Spinner
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="3"
-            android:layout_height="match_parent"
-            android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt" />
+            android:background="@drawable/selector_frame"
+            android:layout_height="match_parent">
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/country_arrays"
+                android:prompt="@string/country_prompt"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
@@ -167,7 +202,6 @@
             android:text="Tìm"
             android:textSize="15sp"
             android:layout_weight="3"/>
-            
     </LinearLayout>
 
 </LinearLayout>
