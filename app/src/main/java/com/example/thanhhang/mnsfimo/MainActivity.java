@@ -1,6 +1,7 @@
 package com.example.thanhhang.mnsfimo;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -72,19 +73,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_addNode) {
-            startActivity( new Intent(this, AddnodeActivity.class));
+            startActivity(new Intent(this, AddnodeActivity.class));
 
         } else if (id == R.id.nav_setting) {
             startActivity(new Intent(this, SettingActivity.class));
         } else if (id == R.id.nav_share) {
             Toast.makeText(this, "Chia se", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_Feedback) {
-            Toast.makeText(this, "phan hoi", Toast.LENGTH_SHORT).show();
+            sendEmail();
         } else if (id == R.id.nav_introduce) {
             startActivity(new Intent(this, IntroduceActivity.class));
         } else if (id == R.id.nav_rate) {
-        Toast.makeText(this, "danh gia", Toast.LENGTH_SHORT).show();
-    }
+            Toast.makeText(this, "danh gia", Toast.LENGTH_SHORT).show();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -93,8 +94,13 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main,menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
 
         return true;
+    }
+    protected void sendEmail() {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+        emailIntent.setData(Uri.parse("mailto: thanhhang27051996@gmail.com"));
+        startActivity(Intent.createChooser(emailIntent, "Send feedback to us"));
     }
 }

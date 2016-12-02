@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.thanhhang.mnsfimo">
+    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -20,7 +21,8 @@
         </activity>
         <activity android:name=".Activities.AddnodeActivity" />
         <activity android:name=".Activities.SettingActivity" />
-        <activity android:name=".Activities.IntroduceActivity"></activity>
+        <activity android:name=".Activities.IntroduceActivity" />
+        <activity android:name=".Activities.ResultActivity"></activity>
     </application>
 
 </manifest>

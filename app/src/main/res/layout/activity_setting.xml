@@ -17,7 +17,7 @@
         android:textColor="@android:color/black"
         android:text="Cài đặt"
         android:textSize="25sp"
-        android:id="@+id/textView2" />
+         />
 
     <View
         android:layout_width="match_parent"
@@ -92,15 +92,18 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="Ngôn ngữ"
+            android:layout_marginTop="10dp"
             android:textSize="20sp"
-            android:textColor="@android:color/black"/>
-        <EditText
+            android:textColor="#000"
+            android:layout_weight="2"/>
+        <Spinner
             android:layout_width="0dp"
+            android:layout_weight="3"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Tieng viet"/>
+            android:entries="@array/language_array"
+            android:prompt="@string/language_prompt" />
+
     </LinearLayout>
 
 </LinearLayout>

@@ -1,13 +1,173 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context="com.example.thanhhang.mnsfimo.FragmentMain.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Tim kiem nang cao" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Tìm kiếm nâng cao"
+        android:textSize="25sp"
+        />
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Quận"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_weight="2"/>
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Phường"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_weight="2"/>
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="PM 2.5"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_weight="2"/>
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Nhiệt độ"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_weight="2"/>
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Độ ẩm"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_weight="2"
+            android:id="@+id/textView2" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="thời gian"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_weight="2"/>
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"/>
+        <Button
+            android:id="@+id/btx_timNangCao"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Tìm"
+            android:textSize="15sp"
+            android:layout_weight="3"/>
+            
+    </LinearLayout>
+
+</LinearLayout>
