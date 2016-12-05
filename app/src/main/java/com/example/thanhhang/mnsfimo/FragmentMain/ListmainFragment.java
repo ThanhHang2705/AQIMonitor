@@ -22,9 +22,6 @@ public class ListmainFragment extends Fragment {
     ListLoveAdapter adapter;
     ArrayList<Love> listLove= new ArrayList<>();
 
-
-
-
     public ListmainFragment() {
         // Required empty public constructor
     }
@@ -38,7 +35,6 @@ public class ListmainFragment extends Fragment {
         list = (ListView) view.findViewById(R.id.listLove);
         adapter = new ListLoveAdapter(listLove,getActivity());
         list.setAdapter(adapter);
-
         return view;
     }
 
