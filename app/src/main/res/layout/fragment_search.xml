@@ -207,22 +207,24 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
-        <Button
-        android:id="@+id/btx_timNangCao"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:text="Hủy"
-        android:textSize="15sp"
-        android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btx_reset"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Tìm"
-           android:layout_marginLeft="5dp"
+            android:text="Hủy"
+            android:layout_marginLeft="5dp"
             android:textSize="15sp"
             android:layout_weight="1"/>
+        <Button
+        android:id="@+id/btx_timNangCao"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="Tìm"
+        android:textSize="15sp"
+        android:layout_weight="1"/>
+
+
     </LinearLayout>
 
 </LinearLayout>

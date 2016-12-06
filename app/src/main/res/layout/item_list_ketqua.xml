@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@drawable/selector_list"
+    android:layout_height="200dp">
+    <TextView
+        android:id="@+id/txt_id"
+        android:text="ID"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#000"
+        />
+    <TextView
+        android:id="@+id/txt_nameNode"
+        android:text="Tên Node"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#000"
+        />
+    <TextView
+        android:id="@+id/txt_address"
+        android:text="Vị Trí"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:layout_height="match_parent" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#000"
+        />
+    <TextView
+        android:id="@+id/txt_pm"
+        android:text="PM 2.5"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
