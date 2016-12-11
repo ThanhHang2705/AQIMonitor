@@ -1,28 +1,47 @@
 package com.example.thanhhang.mnsfimo.FragmentMain;
 
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.thanhhang.mnsfimo.MainActivity;
 import com.example.thanhhang.mnsfimo.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MapFragment extends Fragment{
-    SupportMapFragment mSupportMapFragment;
-    private GoogleMap map;
+public class MapFragment extends Fragment {
 
+    private GoogleMap map;
+    @SuppressWarnings("unused")
+    private View myContentsView;
+    @SuppressWarnings("unused")
+    Marker marker;
+    private  String PM;
     MapView mMapView;
     public MapFragment() {
         // Required empty public constructor
@@ -35,49 +54,132 @@ public class MapFragment extends Fragment{
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_map, container, false);
         mMapView = (MapView) v.findViewById(R.id.map);
+
+
         mMapView.onCreate(savedInstanceState);
 
         mMapView.onResume();
         mMapView.getMapAsync(new OnMapReadyCallback(){
             public void onMapReady(GoogleMap googleMap) {
-                /*map = googleMap;
-                // Add a marker in Sydney and move the camera
-                LatLng TutorialsPoint = new LatLng(21, 57);
-                map.addMarker(new
-                        MarkerOptions().position(TutorialsPoint).title("Tutorialspoint.com"));
-                map.moveCamera(CameraUpdateFactory.newLatLng(TutorialsPoint));*/
                 map = googleMap;
 
-                // For showing a move to my location button
-               /* googleMap.setMyLocationEnabled(true);*/
-
-                // For dropping a marker at a point on the Map
-                /*LatLng sydney = new LatLng(-34, 151);
-                map.addMarker(new MarkerOptions().position(sydney).title("This is Sydney").snippet("Sysney is very beautiful"));
-
-                // For zooming automatically to the location of the marker
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(15).build();
-                map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));*/
-
                 LatLng NoiBai = new LatLng(21.217712, 105.792383);
-                map.addMarker(new MarkerOptions().position(NoiBai).title("Marker in San Bay Noi Bai"));
+                PM = "40";
+                map.addMarker(new MarkerOptions()
+                        .position(NoiBai)
+                        .title("Marker in San Bay Noi Bai")
+                        .icon( BitmapDescriptorFactory.fromBitmap(DrawMarker(PM, R.mipmap.green_square2)))
+                        .snippet(PM));
+
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(NoiBai,10));
 
                 LatLng vnu = new LatLng(21.037442, 105.781376);
-                map.addMarker(new MarkerOptions().position(vnu).title("Marker in VNU"));
+                PM="30";
+                map.addMarker(new MarkerOptions()
+                        .position(vnu)
+                        .title("Marker in VNU")
+                        .icon( BitmapDescriptorFactory.fromBitmap(DrawMarker(PM, R.mipmap.green_square2)))
+                        .snippet(PM));
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(vnu,10));
 
                 LatLng SonTay = new LatLng(21.139634, 105.50423);
-                map.addMarker(new MarkerOptions().position(SonTay).title("Marker in Thanh Co Son Tay"));
+                PM="35";
+                map.addMarker(new MarkerOptions()
+                        .position(SonTay)
+                        .title("Marker in Thanh Co Son Tay")
+                        .icon( BitmapDescriptorFactory.fromBitmap(DrawMarker(PM,R.mipmap.green_square2)))
+                        .snippet(PM));
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(SonTay,10));
 
                 LatLng ChuaHuong = new LatLng(20.616085, 105.744802);
-                map.addMarker(new MarkerOptions().position(ChuaHuong).title("Marker in Chua Huong"));
+                PM="20";
+                Marker m = map.addMarker(new MarkerOptions()
+                        .position(ChuaHuong).title("Marker in Chua Huong")
+                        /*.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))*/
+                        .icon( BitmapDescriptorFactory.fromBitmap(DrawMarker(PM,R.mipmap.green_square2)))
+                        .snippet(PM));
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(ChuaHuong,10));
+                /*m.showInfoWindow();*/
 
                 LatLng BatTrang = new LatLng(20.976217, 105.912747);
-                map.addMarker(new MarkerOptions().position(BatTrang).title("Marker in Bat Trang"));
+                PM = "30";
+                map.addMarker(new MarkerOptions()
+                        .position(BatTrang)
+                        .title("Marker in Bat Trang")
+                        .icon( BitmapDescriptorFactory.fromBitmap(DrawMarker(PM,R.mipmap.green_square2)))
+                        .snippet(PM));
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(BatTrang,10));
+                map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener(){
+
+
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+
+                        AlertDialog.Builder alertadd = new AlertDialog.Builder(getContext());
+                        LayoutInflater factory = LayoutInflater.from(getContext());
+                        final View view = factory.inflate(R.layout.location_info, null);
+                        TextView tvTitle = (TextView)view.findViewById(R.id.title);
+                        tvTitle.setText(marker.getTitle());
+
+                        ImageView imgView = ((ImageView)view.findViewById(R.id.img));
+                        imgView.setImageBitmap(DrawMarker(marker.getSnippet(),R.mipmap.images));
+                        @SuppressWarnings("unused")
+                        Button detail = (Button)view.findViewById(R.id.detail);
+                        detail.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(getContext(),"detail",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        @SuppressWarnings("unused")
+                        Button follow = (Button)view.findViewById(R.id.follow);
+                        follow.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(getContext(),"follow",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        alertadd.setView(view);
+                        alertadd.show();
+
+                        return false;
+                    }
+                });
+
+                /*map.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+                    @Override
+                    public View getInfoWindow(Marker marker) {
+
+                        TextView tvTitle = ((TextView)myContentsView.findViewById(R.id.title));
+                        tvTitle.setText(marker.getTitle());
+                        *//*TextView tvSnippet = ((TextView)myContentsView.findViewById(R.id.snippet));
+                        tvSnippet.setText(marker.getSnippet());*//*
+                        ImageView imgView = ((ImageView)myContentsView.findViewById(R.id.img));
+                        imgView.setImageBitmap(DrawMarker(marker.getSnippet()));
+
+                        @SuppressWarnings("unused")
+                        Button detail = (Button)myContentsView.findViewById(R.id.detail);
+                        detail.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(myContentsView.getContext(),"hello",Toast.LENGTH_LONG).show();
+                            }
+                        });
+        *//*detail.setOnClickListener(this);*//*
+                        @SuppressWarnings("unused")
+                        Button follow = (Button)myContentsView.findViewById(R.id.follow);
+        *//*follow.setOnClickListener(this);*//*
+
+                        return myContentsView;
+                    }
+
+                    @Override
+                    public View getInfoContents(Marker marker) {
+                        return null;
+                    }
+
+
+                });*/
             }
         });
 
@@ -110,4 +212,37 @@ public class MapFragment extends Fragment{
         super.onLowMemory();
         mMapView.onLowMemory();
     }
+
+    @SuppressWarnings("unused")
+    public Bitmap DrawMarker(String number,int idImage){
+        Bitmap bm = BitmapFactory.decodeResource(getResources(), idImage);
+        /*Bitmap bm = BitmapFactory.decodeR*/
+
+        Bitmap.Config config = bm.getConfig();
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+
+        Bitmap newImage = Bitmap.createBitmap(width, height, config);
+
+        Canvas c = new Canvas(newImage);
+        c.drawBitmap(bm, 0, 0, null);
+
+        Paint paint = new Paint();
+        paint.setColor(Color.YELLOW);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+                /*paint.setTextSize(40);*/
+        /*float scale = getResources().getDisplayMetrics().scaledDensity;*/
+        float scale =width/35;
+        paint.setTextSize((int) (20 * scale));
+        Rect bounds = new Rect();
+        String gText = number;
+        paint.getTextBounds(gText, 0, gText.length(), bounds);
+        int x = (width - bounds.width())/2;
+        int y = (height + bounds.height())/2;
+
+        c.drawText(gText, x, y, paint);
+        /*Toast.makeText(getContext(),Float.toString(scale),Toast.LENGTH_LONG).show();*/
+        return newImage;
+    }
+
 }
