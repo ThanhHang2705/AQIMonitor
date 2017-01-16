@@ -1,7 +1,6 @@
 package com.example.thanhhang.mnsfimo.FragmentMain;
 
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -19,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.thanhhang.mnsfimo.MainActivity;
 import com.example.thanhhang.mnsfimo.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -177,7 +175,6 @@ public class MapFragment extends Fragment {
                     public View getInfoContents(Marker marker) {
                         return null;
                     }
-
 
                 });*/
             }

@@ -5,9 +5,43 @@
     tools:context="com.example.thanhhang.mnsfimo.FragmentMain.IntroPMFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PM 2.5" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_margin="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+             android:src="@drawable/ic_pm"
+                />
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="20sp"
+                android:text="Bảng phân mức chỉ số PM 2.5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#f019131a"
+                android:textSize="16sp"
+                android:text=" \n \t PM2.5 là các hạt bụi lơ lửng có đường kính nhỏ hơn hoặc bằng 2,5 µm (micromet).
+\n \t Theo nghiên cứu của các nhà khoa học, những hạt có đường kính bé hơn 10 micromet là những hạt có thể bị con người hít vào khi thở, chúng sẽ tích tụ trên phổi, gây ra nguy hại cho sức khỏe con người. Những hạt có đường kính bé hơn 2,5 micromet là những hạt đặc biệt nguy hiểm bởi vì chúng xâm nhập trực tiếp vào các túi phổi.
+\n \tVì vậy, các nhà khoa học dùng chỉ số PM 2.5 để biểu thị hàm lượng tiêu chuẩn của các hạt trôi nổi trong một mét khối không khí. Chỉ số này càng cao cũng có nghĩa là sự ô nhiễm không khí ở nơi đó càng nghiêm trọng.
+\n \t Chỉ số PM2.5 là mật độ số hạt PM2.5 có trong 1 mét khối không khí, mức tiêu chuẩn và an toàn là 10, tức là 10 hạt trong 1 mét khối không khí, chỉ số này càng lên cao thì mức độ ô nhiễm không khí càng nguy hiểm.
+\n
+    "
+                />
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
 
 </FrameLayout>

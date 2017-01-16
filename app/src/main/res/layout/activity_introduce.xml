@@ -8,11 +8,11 @@
     tools:context="com.example.thanhhang.mnsfimo.Activities.IntroduceActivity">
 
     <android.support.design.widget.TabLayout
-        android:background="#2E7D32"
+        android:background="#34b438"
         android:layout_alignParentTop="true"
         android:id="@+id/tab2_layout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         app:tabSelectedTextColor="#ef1f1f"
         app:tabTextColor="#fff"
         >

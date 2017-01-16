@@ -5,9 +5,34 @@
     tools:context="com.example.thanhhang.mnsfimo.FragmentMain.IntroProductFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Sản Phẩm" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_margin="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/ic_app"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#f019131a"
+                android:textSize="16sp"
+                android:text=" \n \t AOI monitor là sản phẩm cho phép người dùng tìm kiếm và theo dõi thông tin Node tại những nơi mà người dùng quan tâm.
+                                \n \t Sản phẩm cung cấp thông tin về chất lượng không khí tại các node đăng kí,có những lời khuyên và cảnh báo khi cần thiết
+
+    "
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </FrameLayout>
